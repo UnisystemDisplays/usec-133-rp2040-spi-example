@@ -34,8 +34,8 @@ project(usec-133-rp2040-spi-example C CXX ASM)
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
-
-add_executable(usec-133-rp2040-spi-example main.c )
+include_directories(${PROJECT_SOURCE_DIR}/usec-133-spi-lib)
+add_executable(usec-133-rp2040-spi-example main.c platform.c usec-133-spi-lib/usec_dev.c)
 
 pico_set_program_name(usec-133-rp2040-spi-example "usec-133-rp2040-spi-example")
 pico_set_program_version(usec-133-rp2040-spi-example "0.1")
